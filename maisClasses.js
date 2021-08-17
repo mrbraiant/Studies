@@ -17,13 +17,16 @@ var Animal = /** @class */ (function () {
     function Animal(name, color) {
         this.name = name;
         this.color = color;
+        this.atributo1 = "2o Atributo";
     }
     Animal.prototype.correr = function () {
     };
     Animal.prototype.andar = function () {
+        this.correr();
     };
     Animal.prototype.comer = function () {
-        console.log('Comer do animal');
+        this.atributo = "valor";
+        console.log("Comer do animal");
     };
     return Animal;
 }());
@@ -33,8 +36,9 @@ var Coelho = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Coelho.prototype.comer = function () {
+        console.log(this.atributo1);
         _super.prototype.comer.call(this);
-        console.log('Comer do Coelho');
+        console.log("Comer do Coelho");
     };
     return Coelho;
 }(Animal));
@@ -42,5 +46,5 @@ var coelho = new Coelho("Coelho Leão Anão", "Branco");
 console.log(coelho.name);
 console.log(coelho.color);
 coelho.andar();
-coelho.correr();
+//coelho.correr();
 coelho.comer();

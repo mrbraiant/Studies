@@ -1,2 +1,2 @@
 # Studies
-My studies folder
+My studies folder of Typescript course by School Of Net
